@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sacred Chant · Sacred music for prayer and quiet</title>
+<meta name="description" content="Sacred Chant is a digital collection of sacred chant recordings to accompany prayer, reading, rest and quiet moments. One-time payment, instant digital access.">
+<meta property="og:title" content="Sacred Chant · Sacred music for prayer and quiet">
+<meta property="og:description" content="A digital collection of sacred chant recordings for prayer, reading and rest.">
+<meta property="og:type" content="website">
+<!-- META PIXEL / GTM: paste your tracking code here -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c1a17; --ink-2:#55504a; --ink-3:#8a847c;
+  --line:#ece8e1; --soft:#f8f6f2; --gold:#a8843f; --gold-2:#c9a65e;
+  --cta:#1c1a17; --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-weight:500;font-family:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:#fff;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img,svg{display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+.serif{font-family:"Plus Jakarta Sans",system-ui,sans-serif}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.eyebrow::before{content:"";width:18px;height:1px;background:var(--gold-2)}
+h1,h2,h3{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-weight:800;letter-spacing:-.03em;line-height:1.08}
+h2{font-size:clamp(28px,3.8vw,42px)}
+.lead{font-size:18px;color:var(--ink-2);font-weight:500;max-width:560px}
+section{padding:88px 0}
+.center{text-align:center}
+.center .lead{margin-left:auto;margin-right:auto}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--cta);color:#fff;text-decoration:none;font-weight:700;font-size:16.5px;padding:17px 30px;border-radius:999px;transition:transform .15s,box-shadow .15s;box-shadow:0 8px 24px -10px rgba(28,26,23,.55)}
+.btn:hover{transform:translateY(-1px);box-shadow:0 12px 28px -10px rgba(28,26,23,.6)}
+.btn .arr{transition:transform .15s}
+.btn:hover .arr{transform:translateX(3px)}
+.btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line);box-shadow:none}
+.micro{font-size:13px;color:var(--ink-3);margin-top:14px;display:flex;flex-wrap:wrap;gap:6px 14px}
+.micro span{display:inline-flex;align-items:center;gap:6px}
+.micro svg{width:14px;height:14px;stroke:var(--gold)}
+
+/* header */
+header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.88);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
+header.scrolled{border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:21px;letter-spacing:-.02em}
+.logo svg{width:26px;height:26px}
+.nav .btn{padding:10px 20px;font-size:14.5px;box-shadow:none}
+
+/* hero */
+.hero{padding:56px 0 80px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(38px,5.4vw,64px);margin:18px 0 22px}
+.giro{display:grid;color:var(--gold);padding-bottom:.08em}
+.giro span{grid-area:1/1;font-weight:800;opacity:0;transform:translateY(60%);transition:opacity .55s,transform .55s}
+.giro span.on{opacity:1;transform:none}
+.giro span.out{opacity:0;transform:translateY(-60%)}
+.hero .lead{margin-bottom:30px}
+.trust{display:flex;align-items:center;gap:14px;margin-top:30px;padding-top:24px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-2);max-width:520px}
+.trust b{color:var(--ink)}
+.notes{display:flex}
+.notes i{width:34px;height:34px;border-radius:50%;border:2px solid #fff;background:var(--soft);display:grid;place-items:center;margin-left:-8px;font-style:normal;font-family:"Plus Jakarta Sans",sans-serif;font-size:15px;font-weight:700;color:var(--gold)}
+.notes i:first-child{margin-left:0}
+
+/* phone */
+.phone-col{display:flex;justify-content:center;position:relative}
+.halo{position:absolute;inset:-6% -4%;background:radial-gradient(closest-side,#f5ecd9 0%,rgba(245,236,217,.35) 55%,transparent 75%);z-index:0}
+.phone{position:relative;z-index:1;width:300px;border-radius:44px;background:#fff;border:10px solid #1c1a17;box-shadow:0 40px 80px -30px rgba(28,26,23,.45);overflow:hidden}
+.ph-in{padding:16px 18px 22px}
+.ph-top{display:flex;justify-content:space-between;font-size:12px;font-weight:600;margin-bottom:14px}
+.ph-cover{aspect-ratio:1;border-radius:20px;background:linear-gradient(160deg,#faf6ee,#efe4cf);display:grid;place-items:center;position:relative;overflow:hidden}
+.ph-cover svg{width:62%;height:62%}
+.ph-tag{position:absolute;top:12px;left:12px;font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:#fff;padding:5px 9px;border-radius:999px;color:var(--gold)}
+.ph-title{font-family:"Plus Jakarta Sans",sans-serif;font-size:20px;font-weight:800;letter-spacing:-.02em;margin-top:16px;line-height:1.1}
+.ph-sub{font-size:12.5px;color:var(--ink-3);margin-top:3px}
+.wave{display:flex;align-items:center;gap:3px;height:34px;margin:16px 0 6px}
+.wave b{flex:1;background:#e6dccb;border-radius:3px;height:30%;transition:height .25s}
+.wave b.done{background:var(--gold)}
+.playing .wave b{animation:pulse 1.2s ease-in-out infinite}
+@keyframes pulse{50%{height:var(--h,60%)}}
+.ph-time{display:flex;justify-content:space-between;font-size:11px;color:var(--ink-3)}
+.ph-ctrl{display:flex;justify-content:center;align-items:center;gap:26px;margin-top:12px}
+.ph-ctrl svg{width:22px;height:22px;stroke:var(--ink)}
+.play{width:58px;height:58px;border-radius:50%;background:var(--ink);display:grid;place-items:center;border:0;cursor:pointer}
+.play svg{width:22px;height:22px;fill:#fff;stroke:none}
+.ph-caption{position:absolute;bottom:-34px;left:0;right:0;text-align:center;font-size:12px;color:var(--ink-3)}
+
+/* moments */
+.moments{background:var(--soft)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:34px 0 40px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 18px;font-size:14.5px;font-weight:500;cursor:pointer;transition:.15s;color:var(--ink-2)}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.moment-card{max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:24px;padding:36px 40px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;min-height:180px;text-align:left}
+.moment-ico{width:84px;height:84px;border-radius:22px;background:#f5ecd9;display:grid;place-items:center}
+.moment-ico svg{width:40px;height:40px;stroke:var(--gold)}
+.moment-card h3{font-size:26px;margin-bottom:8px}
+.moment-card p{color:var(--ink-2)}
+.fade{animation:fade .45s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}}
+
+/* tradition */
+.trad-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.quote{border-left:2px solid var(--gold-2);padding:6px 0 6px 26px;font-family:"Plus Jakarta Sans",sans-serif;font-size:clamp(24px,2.8vw,32px);line-height:1.25;font-weight:700;letter-spacing:-.02em}
+.quote small{display:block;font-family:inherit;font-style:normal;font-size:13px;color:var(--ink-3);margin-top:14px;letter-spacing:.02em}
+.facts{display:grid;gap:18px;margin-top:28px}
+.fact{display:flex;gap:16px}
+.fact .n{flex:none;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-family:"Plus Jakarta Sans",sans-serif;font-size:14px;font-weight:700;color:var(--gold)}
+.fact h4{font-size:16px;font-weight:700;margin-bottom:2px}
+.fact p{font-size:15px;color:var(--ink-2)}
+
+/* features */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px}
+.feat{border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;background:#fff;transition:.2s}
+.feat:hover{border-color:#e0d6c3;box-shadow:0 18px 40px -28px rgba(28,26,23,.35)}
+.feat .ic{width:46px;height:46px;border-radius:14px;background:var(--soft);display:grid;place-items:center;margin-bottom:18px}
+.feat .ic svg{width:22px;height:22px;stroke:var(--gold)}
+.feat h3{font-size:19px;margin-bottom:6px}
+.feat p{font-size:15px;color:var(--ink-2)}
+
+/* steps */
+.steps{background:var(--soft)}
+.step-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px;counter-reset:s}
+.step{background:#fff;border-radius:var(--radius);padding:30px 28px;border:1px solid var(--line)}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--ink);color:#fff;font-weight:600;font-size:15px;margin-bottom:18px}
+.step h3{font-size:19px;margin-bottom:6px}
+.step p{color:var(--ink-2);font-size:15px}
+
+/* offer */
+.offer-box{max-width:560px;margin:44px auto 0;border:1px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:0 30px 70px -40px rgba(28,26,23,.4);background:#fff;text-align:left}
+.offer-head{padding:30px 34px 24px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fbf8f2,#fff)}
+.offer-head .name{font-family:"Plus Jakarta Sans",sans-serif;font-size:28px;font-weight:800;letter-spacing:-.02em}
+.offer-head .desc{color:var(--ink-2);font-size:15px}
+.price{display:flex;align-items:baseline;gap:12px;margin-top:18px}
+.price .now{font-family:"Plus Jakarta Sans",sans-serif;font-size:54px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.price .tag{font-size:12.5px;font-weight:600;color:var(--gold);background:#f5ecd9;padding:5px 10px;border-radius:999px}
+.offer-body{font-weight:500;padding:26px 34px 32px}
+.checks{list-style:none;display:grid;gap:12px;margin-bottom:28px}
+.checks li{display:flex;gap:12px;font-size:15.5px}
+.checks svg{flex:none;width:20px;height:20px;stroke:var(--gold);margin-top:2px}
+.offer-body .btn{width:100%}
+.pay{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:16px}
+.pay span{font-size:11.5px;font-weight:600;color:var(--ink-2);border:1px solid var(--line);border-radius:6px;padding:5px 9px}
+.secure{font-size:12.5px;color:var(--ink-3);text-align:center;margin-top:12px}
+
+/* faq */
+.faq-list{max-width:760px;margin:40px auto 0}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font-weight:700;font-size:17px}
+summary::-webkit-details-marker{display:none}
+summary .pm{flex:none;width:28px;height:28px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:transform .2s}
+details[open] summary .pm{transform:rotate(45deg)}
+details p a{color:var(--gold);font-weight:600}
+details p{color:var(--ink-2);padding:0 40px 22px 0;font-size:15.5px}
+
+/* final */
+.final{text-align:center;padding:96px 0 110px}
+.final h2{max-width:720px;margin:0 auto 18px}
+.final .micro{justify-content:center}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:42px 0 120px;font-size:13px;color:var(--ink-3)}
+.foot-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:22px}
+.foot-links{display:flex;gap:20px;flex-wrap:wrap}
+.foot-links a{text-decoration:none;color:var(--ink-2)}
+.foot-links a:hover{color:var(--ink)}
+.disc{display:grid;gap:10px;line-height:1.6;max-width:900px}
+
+/* sticky bar */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:12px 18px calc(12px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:space-between;gap:14px;transform:translateY(110%);transition:transform .3s}
+.sticky.show{transform:none}
+.sticky .t{font-size:13px;color:var(--ink-2);line-height:1.3}
+.sticky .t b{display:block;font-family:"Plus Jakarta Sans",sans-serif;font-size:17px;font-weight:800;color:var(--ink)}
+.sticky .btn{padding:13px 22px;font-size:15px;white-space:nowrap}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .hero-grid,.trad-grid{grid-template-columns:1fr;gap:56px}
+  .hero{padding-top:30px}
+  .feat-grid,.step-grid{grid-template-columns:1fr}
+  .moment-card{grid-template-columns:1fr;padding:30px 26px;text-align:left}
+  section{padding:68px 0}
+  .phone{width:270px}
+}
+@media (min-width:901px){.sticky{left:50%;right:auto;bottom:18px;transform:translate(-50%,160%);border:1px solid var(--line);border-radius:999px;padding:10px 10px 10px 26px;box-shadow:0 20px 40px -20px rgba(28,26,23,.35);min-width:520px}.sticky.show{transform:translate(-50%,0)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- ================= EDIT HERE: checkout link ================= -->
+<script>window.CHECKOUT="https://www.checkout-ds24.com/product/680704?voucher=29doll";</script>
+
+<header id="top">
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Sacred Chant">
+      <svg viewBox="0 0 32 32" fill="none" stroke="#a8843f" stroke-width="1.6" stroke-linecap="round"><path d="M16 3v26M9 10h14"/><path d="M5 22c3-3 6-3 9 0s6 3 9 0 4-2 4-2" opacity=".55"/></svg>
+      Sacred Chant
+    </a>
+    <a class="btn js-buy" href="#offer">Get access</a>
+  </div>
+</header>
+
+<main>
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Sacred music for prayer &amp; quiet</span>
+      <h1>Bring sacred chant to
+        <span class="giro" id="giro" aria-live="polite">
+          <span class="on">your morning prayer</span>
+          <span>your quiet time</span>
+          <span>your Rosary</span>
+          <span>your Scripture reading</span>
+          <span>the end of the day</span>
+        </span>
+      </h1>
+      <p class="lead">Sacred Chant is a digital collection of chant recordings to play while you pray, read, work or rest. Press play and let the ancient sound of the Church fill the room.</p>
+      <a class="btn js-buy" href="#offer">Get Sacred Chant for $29 <span class="arr">→</span></a>
+      <div class="micro">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>One-time payment</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Instant digital access</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>60-day guarantee</span>
+      </div>
+      <div class="trust">
+        <div class="notes"><i>♪</i><i>✝</i><i>♫</i></div>
+        <div>Inspired by the <b>Gregorian chant tradition</b>, sung in churches and monasteries for centuries.</div>
+      </div>
+    </div>
+
+    <div class="phone-col">
+      <div class="halo"></div>
+      <div class="phone" id="phone">
+        <div class="ph-in">
+          <div class="ph-top"><span>9:41</span><span>●●● ▮</span></div>
+          <div class="ph-cover">
+            <span class="ph-tag" id="phTag">Morning</span>
+            <svg viewBox="0 0 120 120" fill="none" stroke="#a8843f" stroke-width="1.4" stroke-linecap="round">
+              <circle cx="60" cy="60" r="44" opacity=".35"/><circle cx="60" cy="60" r="30" opacity=".55"/>
+              <path d="M60 28v64M44 46h32"/>
+              <path d="M20 96c8-6 16-6 24 0s16 6 24 0 16-6 24 0 8 3 8 3" opacity=".5"/>
+            </svg>
+          </div>
+          <div class="ph-title" id="phTitle">Chant for Morning Prayer</div>
+          <div class="ph-sub" id="phSub">Sacred Chant · Collection</div>
+          <div class="wave" id="wave"></div>
+          <div class="ph-time"><span id="tNow">0:00</span><span></span></div>
+          <div class="ph-ctrl">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 20 9 12l10-8v16zM5 19V5"/></svg>
+            <button class="play" id="play" aria-label="Play animation"><svg viewBox="0 0 24 24" id="playIco"><path d="M7 4.5v15l13-7.5z"/></svg></button>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 4 10 8-10 8V4zM19 5v14"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="ph-caption">Illustrative screen</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MOMENTS ================= -->
+<section class="moments">
+  <div class="wrap center reveal">
+    <span class="eyebrow">For every moment of the day</span>
+    <h2 style="margin-top:14px">A quiet companion for your daily rhythm</h2>
+    <p class="lead" style="margin-top:14px">Choose a moment and see how people use sacred chant in everyday life.</p>
+    <div class="chips" id="chips"></div>
+    <div class="moment-card" id="momentCard"></div>
+  </div>
+</section>
+
+<!-- ================= TRADITION ================= -->
+<section>
+  <div class="wrap trad-grid">
+    <div class="reveal">
+      <span class="eyebrow">A living tradition</span>
+      <h2 style="margin:14px 0 18px">The music the Church has prayed with for centuries</h2>
+      <p class="lead">Chant is sung prayer: simple melodies carrying the words of the Psalms and the liturgy. Its calm, unhurried pace has accompanied prayer in monasteries and parishes for generations, and many people still find it a natural soundtrack for recollection.</p>
+      <div class="facts">
+        <div class="fact"><div class="n">i</div><div><h4>Words first</h4><p>Melodies that serve the sacred text, without distraction.</p></div></div>
+        <div class="fact"><div class="n">ii</div><div><h4>Unhurried by nature</h4><p>A steady, gentle flow that fits naturally into prayer and reading.</p></div></div>
+        <div class="fact"><div class="n">iii</div><div><h4>Rooted in the liturgy</h4><p>Part of the Church's musical heritage, now easy to bring home.</p></div></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <blockquote class="quote">“He who sings prays twice.”<small>— Saying traditionally attributed to St. Augustine</small></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHAT YOU GET ================= -->
+<!-- EDIT: adjust these cards so they match exactly what your product includes -->
+<section style="padding-top:20px">
+  <div class="wrap center reveal">
+    <span class="eyebrow">What's included</span>
+    <h2 style="margin-top:14px">Everything in Sacred Chant</h2>
+    <p class="lead" style="margin-top:14px">A simple digital product: buy once, open it on your device and press play.</p>
+  </div>
+  <div class="wrap feat-grid">
+    <div class="feat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div><h3>Sacred chant recordings</h3><p>A curated collection of chant audio to accompany prayer and quiet moments.</p></div>
+    <div class="feat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg></div><h3>Listen on any device</h3><p>Phone, tablet or computer. Use it at home, in the car or with headphones.</p></div>
+    <div class="feat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h3>Instant access</h3><p>Access details are sent to your email right after your purchase is confirmed.</p></div>
+    <div class="feat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/></svg></div><h3>For prayer and devotion</h3><p>Play it during the Rosary, Scripture reading or a few minutes of silence.</p></div>
+    <div class="feat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></div><h3>For calm evenings</h3><p>A gentle background for winding down at the end of the day.</p></div>
+    <div class="feat reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h3"/></svg></div><h3>One-time payment</h3><p>No subscription and no recurring charges. You pay once.</p></div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="steps">
+  <div class="wrap center reveal">
+    <span class="eyebrow">How it works</span>
+    <h2 style="margin-top:14px">Start listening in three steps</h2>
+  </div>
+  <div class="wrap step-grid">
+    <div class="step reveal"><h3>Place your order</h3><p>Complete your purchase on the secure checkout page.</p></div>
+    <div class="step reveal"><h3>Check your email</h3><p>You'll receive your access details right after payment is confirmed.</p></div>
+    <div class="step reveal"><h3>Press play</h3><p>Open the collection on your device and let the chant accompany your day.</p></div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS (optional) =================
+     Add ONLY real reviews from real customers, with their permission.
+     Copy this block inside <main> to enable it:
+
+<section>
+  <div class="wrap center"><span class="eyebrow">From our listeners</span><h2 style="margin-top:14px">What customers say</h2></div>
+  <div class="wrap feat-grid">
+    <div class="feat"><p>"Real review text here."</p><p style="margin-top:12px;font-weight:600;color:#1c1a17">— First name, Country</p></div>
+  </div>
+</section>
+================================================================ -->
+
+<!-- ================= OFFER ================= -->
+<section id="offer">
+  <div class="wrap center reveal">
+    <span class="eyebrow">Get access</span>
+    <h2 style="margin-top:14px">Bring sacred chant home today</h2>
+    <div class="offer-box">
+      <div class="offer-head">
+        <div class="name">Sacred Chant</div>
+        <div class="desc">Digital collection of sacred chant audio</div>
+        <div class="price"><span class="now">$29</span><span class="tag">One-time payment</span></div>
+      </div>
+      <div class="offer-body">
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Full Sacred Chant audio collection</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Instant digital access by email</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Listen on phone, tablet or computer</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>One-time payment, no subscription</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>60-day money-back guarantee</li>
+        </ul>
+        <a class="btn js-buy" href="#">Get Sacred Chant for $29 <span class="arr">→</span></a>
+        <div class="pay"><span>Credit card</span><span>PayPal</span><span>Apple Pay</span><span>Google Pay</span></div>
+        <div class="secure">🔒 Secure checkout processed by Digistore24, our authorized retailer.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="steps">
+  <div class="wrap center reveal">
+    <span class="eyebrow">Questions</span>
+    <h2 style="margin-top:14px">Frequently asked questions</h2>
+  </div>
+  <div class="wrap faq-list reveal" id="faq"></div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="final">
+  <div class="wrap reveal">
+    <span class="eyebrow">Sacred Chant</span>
+    <h2 style="margin-top:14px">Let a few minutes of sacred music become part of your day</h2>
+    <p class="lead" style="margin:0 auto 30px">One-time payment of $29. Instant digital access.</p>
+    <a class="btn js-buy" href="#">Get Sacred Chant <span class="arr">→</span></a>
+    <div class="micro"><span>Secure checkout</span>·<span>60-day money-back guarantee</span>·<span>Credit card, PayPal, Apple Pay &amp; Google Pay</span></div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="logo" href="#top" style="font-size:20px">Sacred Chant</a>
+      <nav class="foot-links">
+        <a href="https://sacredchantguide.site/privacy-policy/">Privacy Policy</a>
+        <a href="https://sacredchantguide.site/terms/">Terms of Use</a>
+        <a href="https://sacredchantguide.site/contact/">Contact</a>
+      </nav>
+    </div>
+    <div class="disc">
+      <p>Sacred Chant is a digital music product intended for personal devotional and listening use. It is not a medical or therapeutic product and is not intended to diagnose, treat, cure or prevent any condition.</p>
+      <p>Orders are processed by Digistore24, our authorized retailer. All purchases are covered by a 60-day money-back guarantee as described in our Terms of Use. Individual experiences with the music may vary.</p>
+      <p>This site is not a part of the Facebook™ website or Meta Platforms, Inc. Additionally, this site is NOT endorsed by Facebook™ in any way. FACEBOOK™ is a trademark of Meta Platforms, Inc.</p>
+      <p>© <span id="yr"></span> Sacred Chant. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <div class="t"><b>Sacred Chant · $29</b>One-time payment</div>
+  <a class="btn js-buy" href="#">Get access <span class="arr">→</span></a>
+</div>
+
+<script>
+(function(){
+  var C = window.CHECKOUT;
+  // carry UTM / fbclid params to the checkout
+  function link(){
+    try{
+      var u = new URL(C), q = new URLSearchParams(location.search);
+      q.forEach(function(v,k){ if(!u.searchParams.has(k)) u.searchParams.set(k,v); });
+      return u.toString();
+    }catch(e){ return C; }
+  }
+  document.querySelectorAll('.js-buy').forEach(function(a){
+    a.href = link();
+    a.addEventListener('click', function(){
+      try{ if(window.fbq) fbq('track','InitiateCheckout',{value:29,currency:'USD'}); }catch(e){}
+    });
+  });
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // rotating phrase
+  var g = document.querySelectorAll('#giro span'), gi = 0;
+  setInterval(function(){
+    var cur = g[gi]; cur.classList.remove('on'); cur.classList.add('out');
+    setTimeout(function(){ cur.classList.remove('out'); }, 560);
+    gi = (gi+1) % g.length; g[gi].classList.add('on');
+  }, 2600);
+
+  // phone mock: waveform + decorative play state
+  var wave = document.getElementById('wave'), N = 34, bars = [];
+  for (var i=0;i<N;i++){ var b=document.createElement('b'); var h=25+Math.round(Math.abs(Math.sin(i*1.7))*60); b.style.height=h+'%'; b.style.setProperty('--h',Math.min(100,h+25)+'%'); b.style.animationDelay=(i%7)*.12+'s'; wave.appendChild(b); bars.push(b); }
+  var tracks = [
+    {tag:'Morning', t:'Chant for Morning Prayer'},
+    {tag:'Rosary', t:'Chant to Accompany the Rosary'},
+    {tag:'Scripture', t:'Chant for Reading the Word'},
+    {tag:'Evening', t:'Chant for the End of the Day'}
+  ];
+  var phone = document.getElementById('phone'), play = document.getElementById('play'), ico = document.getElementById('playIco'),
+      tNow = document.getElementById('tNow'), sec = 0, on = false, timer;
+  function render(){ var p = Math.floor(sec/2)%N; bars.forEach(function(b,i){ b.classList.toggle('done', i<=p); }); tNow.textContent = Math.floor(sec/60)+':'+('0'+sec%60).slice(-2); }
+  play.addEventListener('click', function(){
+    on = !on; phone.classList.toggle('playing', on);
+    ico.innerHTML = on ? '<path d="M7 4h4v16H7zM13 4h4v16h-4z"/>' : '<path d="M7 4.5v15l13-7.5z"/>';
+    clearInterval(timer); if(on) timer = setInterval(function(){ sec++; render(); }, 1000);
+  });
+  var ti = 0;
+  setInterval(function(){
+    if(on) return; ti = (ti+1)%tracks.length;
+    document.getElementById('phTag').textContent = tracks[ti].tag;
+    document.getElementById('phTitle').textContent = tracks[ti].t;
+  }, 3800);
+
+  // moments
+  var icons = {
+    sun:'<path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6.3 6.3 4.9 4.9M19.1 19.1l-1.4-1.4M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/><circle cx="12" cy="12" r="4"/>',
+    beads:'<circle cx="12" cy="5" r="2"/><circle cx="6" cy="9" r="2"/><circle cx="18" cy="9" r="2"/><circle cx="7" cy="15" r="2"/><circle cx="17" cy="15" r="2"/><path d="M12 17v5M10 19.5h4"/>',
+    book:'<path d="M4 4h6a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4zM20 4h-6a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h6z"/>',
+    desk:'<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>',
+    moon:'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>',
+    church:'<path d="M12 2v4M10 4h4M5 21V11l7-5 7 5v10M10 21v-5a2 2 0 0 1 4 0v5"/>'
+  };
+  var moments = [
+    {k:'Morning prayer', i:'sun', t:'Start the day with God', d:'Put on a chant while you make your morning offering, read the daily Gospel or simply sit in silence before the day begins.'},
+    {k:'The Rosary', i:'beads', t:'A gentle background for the Rosary', d:'Many people like soft sacred music in the background while praying the mysteries, alone or with family.'},
+    {k:'Scripture reading', i:'book', t:'Read the Word in a calm space', d:'Chant helps quiet the noise around you so you can focus on the passage in front of you.'},
+    {k:'Work & study', i:'desk', t:'Sacred sound while you focus', d:'Use it as unobtrusive background music while you work, study or take care of the home.'},
+    {k:'Evening', i:'moon', t:'Close the day peacefully', d:'Play it during your evening prayer or while winding down before bed.'},
+    {k:'Sundays & feasts', i:'church', t:'Keep the Lord\'s day special', d:'Fill your home with the music of the Church on Sundays, feast days and liturgical seasons.'}
+  ];
+  var chips = document.getElementById('chips'), card = document.getElementById('momentCard'), mi = 0, auto;
+  function showM(n){
+    mi = n; var m = moments[n];
+    chips.querySelectorAll('.chip').forEach(function(c,i){ c.classList.toggle('on', i===n); });
+    card.innerHTML = '<div class="moment-ico fade"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">'+icons[m.i]+'</svg></div><div class="fade"><h3>'+m.t+'</h3><p>'+m.d+'</p></div>';
+  }
+  moments.forEach(function(m,i){ var c=document.createElement('button'); c.className='chip'; c.textContent=m.k; c.onclick=function(){ clearInterval(auto); showM(i); }; chips.appendChild(c); });
+  showM(0);
+  auto = setInterval(function(){ showM((mi+1)%moments.length); }, 4500);
+
+  // FAQ  (EDIT answers to match your product)
+  var faq = [
+    ['What is Sacred Chant?','Sacred Chant is a digital collection of sacred chant audio recordings, made to accompany prayer, reading, work and quiet moments at home.'],
+    ['How do I receive it?','Right after your payment is confirmed, you receive an email with your access details. Check your spam or promotions folder if you don\'t see it within a few minutes.'],
+    ['Is this a subscription?','No. Sacred Chant is a one-time payment of $29. There are no recurring charges.'],
+    ['What devices can I use?','Any device that plays audio: smartphone, tablet or computer.'],
+    ['Do I need to know Latin or music?','Not at all. You simply press play and listen. No musical knowledge is needed.'],
+    ['Which payment methods are accepted?','Credit card, PayPal, Apple Pay and Google Pay, through the secure Digistore24 checkout.'],
+    ['Is there a guarantee?','Yes. Sacred Chant comes with a 60-day money-back guarantee. If it is not right for you, request a refund within 60 days of purchase. Full details are in our <a href="https://sacredchantguide.site/terms/">Terms of Use</a>.'],
+    ['How can I contact support?','Visit our <a href="https://sacredchantguide.site/contact/">Contact page</a> and our team will reply by email. Orders are processed by Digistore24, our authorized retailer.']
+  ];
+  var f = document.getElementById('faq');
+  f.innerHTML = faq.map(function(x){ return '<details><summary>'+x[0]+'<span class="pm">+</span></summary><p>'+x[1]+'</p></details>'; }).join('');
+
+  // header border, sticky bar, reveal
+  var hdr = document.getElementById('top'), st = document.getElementById('sticky'), offer = document.getElementById('offer');
+  function onScroll(){
+    var y = window.scrollY; hdr.classList.toggle('scrolled', y>10);
+    var r = offer.getBoundingClientRect();
+    var inOffer = r.top < innerHeight && r.bottom > 0;
+    st.classList.toggle('show', y>innerHeight*.8 && !inOffer);
+  }
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); }, {threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+})();
+</script>
+</body>
+</html>
