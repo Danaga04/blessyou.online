@@ -170,6 +170,27 @@ footer{border-top:1px solid var(--line);padding:42px 0 120px;font-size:13px;colo
 .foot-links a:hover{color:var(--ink)}
 .disc{display:grid;gap:10px;line-height:1.6;max-width:900px}
 
+/* modal */
+.modal{margin:auto;inset:0;border:0;padding:0;width:min(720px,calc(100% - 28px));max-height:min(86vh,860px);border-radius:24px;box-shadow:0 40px 100px -30px rgba(28,26,23,.5);color:var(--ink);background:#fff;overflow:hidden}
+.modal::backdrop{background:rgba(28,26,23,.45);backdrop-filter:blur(3px)}
+.modal[open]{display:flex;flex-direction:column;animation:pop .25s ease}
+@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.98)}}
+.m-head{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 28px;border-bottom:1px solid var(--line)}
+.m-head h3{font-size:22px}
+.m-close{flex:none;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:20px;line-height:1;color:var(--ink)}
+.m-close:hover{background:var(--soft)}
+.m-body{padding:24px 28px 30px;overflow-y:auto;font-size:15px;color:var(--ink-2);line-height:1.7}
+.m-body h4{color:var(--ink);font-size:16px;font-weight:700;margin:22px 0 6px}
+.m-body h4:first-child{margin-top:0}
+.m-body p{margin-bottom:10px}
+.m-body ul{margin:0 0 10px 20px}
+.m-body a{color:var(--gold);font-weight:600}
+.m-body .upd{font-size:13px;color:var(--ink-3);margin-bottom:18px}
+.m-mail{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:14px 0 18px}
+.m-mail b{color:var(--ink);font-size:16px;word-break:break-all}
+.m-mail button{border:0;background:var(--ink);color:#fff;font:inherit;font-weight:700;font-size:13.5px;padding:10px 16px;border-radius:999px;cursor:pointer}
+body.lock{overflow:hidden}
+
 /* sticky bar */
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:12px 18px calc(12px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:space-between;gap:14px;transform:translateY(110%);transition:transform .3s}
 .sticky.show{transform:none}
@@ -195,7 +216,10 @@ footer{border-top:1px solid var(--line);padding:42px 0 120px;font-size:13px;colo
 <body>
 
 <!-- ================= EDIT HERE: checkout link ================= -->
-<script>window.CHECKOUT="https://www.checkout-ds24.com/product/680704?voucher=29doll";</script>
+<script>
+  window.CHECKOUT="https://www.checkout-ds24.com/product/680704?voucher=29doll";
+  window.SUPPORT_EMAIL="suporte@vcbemcomseucorpo.site";
+</script>
 
 <header id="top">
   <div class="wrap nav">
@@ -391,9 +415,10 @@ footer{border-top:1px solid var(--line);padding:42px 0 120px;font-size:13px;colo
     <div class="foot-top">
       <a class="logo" href="#top" style="font-size:20px">Sacred Chant</a>
       <nav class="foot-links">
-        <a href="https://sacredchantguide.site/privacy-policy/">Privacy Policy</a>
-        <a href="https://sacredchantguide.site/terms/">Terms of Use</a>
-        <a href="https://sacredchantguide.site/contact/">Contact</a>
+        <a href="#" data-modal="privacy">Privacy Policy</a>
+        <a href="#" data-modal="terms">Terms of Use</a>
+        <a href="#" data-modal="refund">Refund Policy</a>
+        <a href="#" data-modal="contact">Contact</a>
       </nav>
     </div>
     <div class="disc">
@@ -404,6 +429,98 @@ footer{border-top:1px solid var(--line);padding:42px 0 120px;font-size:13px;colo
     </div>
   </div>
 </footer>
+
+<!-- ================= POLICY POPUPS ================= -->
+<dialog class="modal" id="modal" aria-labelledby="mTitle">
+  <div class="m-head"><h3 id="mTitle"></h3><button class="m-close" type="button" aria-label="Close" data-close>×</button></div>
+  <div class="m-body" id="mBody"></div>
+</dialog>
+
+<template id="tpl-privacy">
+  <p class="upd">Last updated: November 16, 2026</p>
+  <h4>1. Who we are</h4>
+  <p>This website presents Sacred Chant, a digital collection of sacred chant audio recordings. In this policy, "we", "us" and "our" refer to the Sacred Chant team. Questions about this policy can be sent to <a class="js-mail" href="#"></a>.</p>
+  <h4>2. Information we collect</h4>
+  <ul>
+    <li><b>Information you give us:</b> your name and email address when you purchase or contact support.</li>
+    <li><b>Payment information:</b> payments are processed by Digistore24, our authorized retailer. We do not receive or store your full card details.</li>
+    <li><b>Information collected automatically:</b> technical data such as browser type, device, pages visited and how you reached this site, collected through cookies and similar technologies.</li>
+  </ul>
+  <h4>3. How we use your information</h4>
+  <ul>
+    <li>To process your order and deliver access to Sacred Chant.</li>
+    <li>To answer support requests and refund requests.</li>
+    <li>To measure and improve our website and advertising.</li>
+    <li>To comply with legal obligations.</li>
+  </ul>
+  <p>We do not sell your personal information.</p>
+  <h4>4. Cookies, Meta Pixel and advertising</h4>
+  <p>We use cookies and similar technologies, including the Meta Pixel, provided by Meta Platforms, Inc. These tools help us understand how visitors use this site and measure the results of our ads on Facebook and Instagram. They may collect information such as pages viewed, buttons clicked and purchase events, and Meta may use this information as described in its own <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">Privacy Policy</a>.</p>
+  <p>You can control ad personalization in your <a href="https://www.facebook.com/adpreferences" target="_blank" rel="noopener">Meta ad preferences</a>, block or delete cookies in your browser settings, or opt out of interest-based advertising at <a href="https://optout.aboutads.info/" target="_blank" rel="noopener">aboutads.info</a> and <a href="https://www.youronlinechoices.eu/" target="_blank" rel="noopener">youronlinechoices.eu</a>.</p>
+  <h4>5. Third parties we work with</h4>
+  <ul>
+    <li><b>Digistore24</b>, which processes payments and order delivery (<a href="https://www.digistore24.com/page/privacy" target="_blank" rel="noopener">privacy policy</a>).</li>
+    <li><b>Meta Platforms, Inc.</b>, for advertising measurement.</li>
+    <li>Hosting and email providers needed to operate this site and deliver your access.</li>
+  </ul>
+  <h4>6. Data retention</h4>
+  <p>We keep order and support information for as long as needed to provide the product, handle refunds and meet legal and accounting obligations. We then delete or anonymize it.</p>
+  <h4>7. Your rights</h4>
+  <p>Depending on where you live, you may have the right to access, correct, delete or receive a copy of your personal information, and to object to or restrict certain uses. To make a request, email <a class="js-mail" href="#"></a>. You can unsubscribe from marketing emails at any time using the link in the email.</p>
+  <h4>8. Security</h4>
+  <p>We use reasonable technical and organizational measures to protect your information. No method of transmission over the internet is completely secure.</p>
+  <h4>9. Children</h4>
+  <p>This site is not directed to children under 13, and we do not knowingly collect their personal information.</p>
+  <h4>10. Changes</h4>
+  <p>We may update this policy from time to time. The date at the top shows when it was last changed.</p>
+</template>
+
+<template id="tpl-terms">
+  <p class="upd">Last updated: November 16, 2026</p>
+  <h4>1. Acceptance</h4>
+  <p>By accessing this website or purchasing Sacred Chant, you agree to these Terms of Use. If you do not agree, please do not use the site or purchase the product.</p>
+  <h4>2. The product</h4>
+  <p>Sacred Chant is a digital collection of sacred chant audio recordings intended for personal listening, prayer and devotional use. It is delivered digitally; no physical item is shipped.</p>
+  <h4>3. Price and payment</h4>
+  <p>Sacred Chant is sold for a one-time payment of US$29, as shown on the checkout page. There is no subscription and no recurring charge. Orders are processed by Digistore24, our authorized retailer, which acts as the seller of record. Applicable taxes may be added at checkout.</p>
+  <h4>4. Delivery and access</h4>
+  <p>After your payment is confirmed, access details are sent to the email address used at checkout. If you do not receive them, check your spam folder or contact us.</p>
+  <h4>5. 60-day money-back guarantee</h4>
+  <p>If you are not satisfied, you may request a full refund within 60 days of purchase. See the <a href="#" data-modal="refund">Refund Policy</a> for details. Access to the product may be removed once a refund is processed.</p>
+  <h4>6. License and permitted use</h4>
+  <p>Your purchase gives you a personal, non-exclusive, non-transferable license to listen to the recordings. You may not resell, redistribute, publicly broadcast, upload or share the files or your access with others.</p>
+  <h4>7. Intellectual property</h4>
+  <p>The recordings, texts, design and other content on this site and in the product are protected by intellectual property laws and remain the property of their respective owners.</p>
+  <h4>8. Disclaimer</h4>
+  <p>Sacred Chant is a music product. It is not a medical, psychological or therapeutic product and is not intended to diagnose, treat, cure or prevent any condition. We do not guarantee any specific result, and individual experiences may vary.</p>
+  <h4>9. Limitation of liability</h4>
+  <p>To the extent permitted by law, our total liability related to the product is limited to the amount you paid for it.</p>
+  <h4>10. Changes</h4>
+  <p>We may update these terms from time to time. The version published on this site applies to purchases made while it is in effect.</p>
+  <h4>11. Contact</h4>
+  <p>Questions about these terms: <a class="js-mail" href="#"></a>.</p>
+</template>
+
+<template id="tpl-refund">
+  <p class="upd">Last updated: November 16, 2026</p>
+  <h4>60-day money-back guarantee</h4>
+  <p>We want you to be happy with Sacred Chant. If it is not right for you, you can request a full refund within 60 days of your purchase date.</p>
+  <h4>How to request a refund</h4>
+  <ul>
+    <li>Email <a class="js-mail" href="#"></a> with the email address used at checkout and your order number, or</li>
+    <li>Request it directly through Digistore24 using the link in your order confirmation email.</li>
+  </ul>
+  <p>Refunds are issued to the original payment method by Digistore24. Processing times depend on your bank or payment provider. After a refund, access to the product may be removed.</p>
+</template>
+
+<template id="tpl-contact">
+  <p>Questions about your order, access or anything else? Our support team is happy to help.</p>
+  <div class="m-mail"><div><small>Email support</small><br><b class="js-mail-text"></b></div><button type="button" id="copyMail">Copy email</button></div>
+  <h4>Response time</h4>
+  <p>We reply by email within 1–2 business days.</p>
+  <h4>Order help</h4>
+  <p>Please include the email address used at checkout and your order number so we can find your purchase quickly. Orders are processed by Digistore24; you can also manage your order through the link in your confirmation email.</p>
+</template>
 
 <div class="sticky" id="sticky">
   <div class="t"><b>Sacred Chant · $29</b>One-time payment</div>
@@ -496,11 +613,31 @@ footer{border-top:1px solid var(--line);padding:42px 0 120px;font-size:13px;colo
     ['What devices can I use?','Any device that plays audio: smartphone, tablet or computer.'],
     ['Do I need to know Latin or music?','Not at all. You simply press play and listen. No musical knowledge is needed.'],
     ['Which payment methods are accepted?','Credit card, PayPal, Apple Pay and Google Pay, through the secure Digistore24 checkout.'],
-    ['Is there a guarantee?','Yes. Sacred Chant comes with a 60-day money-back guarantee. If it is not right for you, request a refund within 60 days of purchase. Full details are in our <a href="https://sacredchantguide.site/terms/">Terms of Use</a>.'],
-    ['How can I contact support?','Visit our <a href="https://sacredchantguide.site/contact/">Contact page</a> and our team will reply by email. Orders are processed by Digistore24, our authorized retailer.']
+    ['Is there a guarantee?','Yes. Sacred Chant comes with a 60-day money-back guarantee. If it is not right for you, request a refund within 60 days of purchase. Full details are in our <a href="#" data-modal="refund">Refund Policy</a>.'],
+    ['How can I contact support?','Visit our <a href="#" data-modal="contact">Contact page</a> and our team will reply by email. Orders are processed by Digistore24, our authorized retailer.']
   ];
   var f = document.getElementById('faq');
   f.innerHTML = faq.map(function(x){ return '<details><summary>'+x[0]+'<span class="pm">+</span></summary><p>'+x[1]+'</p></details>'; }).join('');
+
+  // policy popups
+  var MAIL = window.SUPPORT_EMAIL, modal = document.getElementById('modal'), mBody = document.getElementById('mBody'), mTitle = document.getElementById('mTitle');
+  var titles = {privacy:'Privacy Policy', terms:'Terms of Use', refund:'Refund Policy', contact:'Contact us'};
+  function openModal(k){
+    var t = document.getElementById('tpl-'+k); if(!t) return;
+    mTitle.textContent = titles[k]; mBody.innerHTML = ''; mBody.appendChild(t.content.cloneNode(true)); mBody.scrollTop = 0;
+    mBody.querySelectorAll('.js-mail').forEach(function(a){ a.textContent = MAIL; a.href = 'mailto:'+MAIL; });
+    mBody.querySelectorAll('.js-mail-text').forEach(function(b){ b.textContent = MAIL; });
+    var cp = document.getElementById('copyMail');
+    if(cp) cp.onclick = function(){ try{ navigator.clipboard.writeText(MAIL).then(function(){ cp.textContent='Copied!'; }); }catch(e){} };
+    if(!modal.open){ if(modal.showModal) modal.showModal(); else modal.setAttribute('open',''); document.body.classList.add('lock'); }
+  }
+  function closeModal(){ if(modal.close) modal.close(); else modal.removeAttribute('open'); }
+  modal.addEventListener('close', function(){ document.body.classList.remove('lock'); });
+  modal.addEventListener('click', function(e){ if(e.target === modal || e.target.hasAttribute('data-close')) closeModal(); });
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('[data-modal]'); if(!a) return;
+    e.preventDefault(); openModal(a.getAttribute('data-modal'));
+  });
 
   // header border, sticky bar, reveal
   var hdr = document.getElementById('top'), st = document.getElementById('sticky'), offer = document.getElementById('offer');
